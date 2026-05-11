@@ -29,4 +29,12 @@ DB --> Backend: Task updated
 Backend --> Frontend: 200 OK
 Frontend --> Student: Task marked as done
 
+== Delete Task ==
+Student -> Frontend: Click delete button
+Frontend -> Backend: Delete task
+Backend -> DB: Remove task by ID
+DB --> Backend: Task deleted
+Backend --> Frontend: 200 OK
+Frontend --> Student: Task removed from dashboard
+
 @enduml
