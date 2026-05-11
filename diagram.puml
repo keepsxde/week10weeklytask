@@ -21,4 +21,12 @@ DB --> Backend: Task list
 Backend --> Frontend: 200 OK + tasks array
 Frontend --> Student: Display task list
 
+== Mark Task as Complete ==
+Student -> Frontend: Click complete button
+Frontend -> Backend: Send task to backend
+Backend -> DB: Update task status = complete
+DB --> Backend: Task updated
+Backend --> Frontend: 200 OK
+Frontend --> Student: Task marked as done
+
 @enduml
