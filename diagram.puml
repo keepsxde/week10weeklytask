@@ -1,0 +1,24 @@
+@startuml
+
+actor Student
+participant "Frontend\n(HTML/CSS/JS)" as Frontend
+participant "Express Server\n(Node.js)" as Backend
+database "Database\n(MongoDB/Supabase)" as DB
+
+== Create Task ==
+Student -> Frontend: Fill in task form\n(title, deadline)
+Frontend -> Backend: POST /api/tasks
+Backend -> DB: Insert new task
+DB --> Backend: Task saved
+Backend --> Frontend: 201 Created + task data
+Frontend --> Student: Task appears in dashboard
+
+== View All Tasks ==
+Student -> Frontend: Open dashboard
+Frontend -> Backend: GET tasks
+Backend -> DB: Find all tasks
+DB --> Backend: Task list
+Backend --> Frontend: 200 OK + tasks array
+Frontend --> Student: Display task list
+
+@enduml

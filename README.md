@@ -14,7 +14,7 @@
 - create and delete tasks
 - set deadlines for tasks 
 - Mark tasks as complete 
-- simple dashboard showing progress
+- simple dashboard showing progress 
 
 ## Analysis Web Application
 1. Functional Requirements
